@@ -23,4 +23,11 @@ public class CoordinateTest{
 		Assert.assertEquals(4.0, c.getY(), EPSILON);
 	}
 
+	@Test
+	public void testConstructorIfEmpty(){
+		// TODO
+		Coordinate c = new Coordinate();
+		Assert.assertEquals(true, c.isEmpty());
+		Assert.assertEquals(true, c.isEmpty());
+	}
 }
