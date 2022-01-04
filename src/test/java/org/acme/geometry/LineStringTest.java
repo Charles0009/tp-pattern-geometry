@@ -16,7 +16,7 @@ public class LineStringTest {
 		Point p = new Point(coords);
         points.add(p);
         LineString l = new LineString(points);       
-        Assert.assertEquals("LineString",l.getType());
+        Assert.assertEquals("LINESTRING",l.getType());
 		Assert.assertEquals(1, l.getNumPoints());
         Assert.assertEquals(p, l.getPointN(0));
 	}

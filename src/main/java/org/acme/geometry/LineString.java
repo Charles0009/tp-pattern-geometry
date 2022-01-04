@@ -31,13 +31,13 @@ public class LineString implements Geometry {
         return this.points.isEmpty();
     }
     
-    public void translate(Double dx, Double dy) {
+    public void translate(double dx, double dy) {
 
         List<Point> points_translated = new ArrayList<>();
 
         for(Point point : this.points){
-            Double new_coord_x = dx + point.getCoordinate().getX();
-            Double new_coord_y = dy + point.getCoordinate().getY();
+            double new_coord_x = dx + point.getCoordinate().getX();
+            double new_coord_y = dy + point.getCoordinate().getY();
             Coordinate coord = new Coordinate (new_coord_x, new_coord_y);
             Point new_point = new Point (coord);
 
@@ -48,7 +48,12 @@ public class LineString implements Geometry {
 
     
     public LineString clone(){
-        return new LineString(this.points);
+
+        List<Point> newPoints = new ArrayList<>(getNumPoints());
+        for(Point point : points){
+            newPoints.add(point.clone());
+        }
+        return new LineString(newPoints);
     }
 
   
@@ -56,7 +61,7 @@ public class LineString implements Geometry {
 
     @Override
     public String getType() {
-        return "LineString";
+        return "LINESTRING";
     }
 
     @Override

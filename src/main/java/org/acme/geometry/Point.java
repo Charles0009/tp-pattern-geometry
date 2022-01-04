@@ -20,7 +20,7 @@ public class Point implements Geometry{
 
     @Override
     public String getType() {
-        return "Point";
+        return "POINT";
     }
 
     public Coordinate getCoordinate(){
@@ -31,13 +31,13 @@ public class Point implements Geometry{
         return this.coordinate.isEmpty();
     }
 
-    public void translate (Double dx, Double dy){
+    public void translate (double dx, double dy){
         if (this.coordinate.isEmpty()) {
             this.coordinate = new Coordinate(dx, dy);
         }
         else{
-            Double new_coord_x = dx + this.coordinate.getX();
-            Double new_coord_y = dy + this.coordinate.getY();
+            double new_coord_x = dx + this.coordinate.getX();
+            double new_coord_y = dy + this.coordinate.getY();
             this.coordinate = new Coordinate (new_coord_x, new_coord_y);
         }
     }
