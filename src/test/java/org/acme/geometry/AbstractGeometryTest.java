@@ -2,17 +2,17 @@ package org.acme.geometry;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 
-public class WktWriterTest {
-     
-	public static final double EPSILON = 1.0e-15;
+public class AbstractGeometryTest {
+    
 
-	@Test
-	public void testWriter(){
-		
+    @Test
+    public void testAbstract(){
+
         List <Point> points = new ArrayList<>();
         Coordinate coords = new Coordinate(1.0,2.0);
         Coordinate coords2 = new Coordinate(3.0,4.0);
@@ -22,10 +22,10 @@ public class WktWriterTest {
         points.add(p2);
         LineString l = new LineString(points);
 
-        WktWriter writer = new WktWriter();
 
-        Assert.assertEquals("POINT(1.0 2.0)", writer.write(p));	
-        Assert.assertEquals("LINESTRING( (1.0 2.0) (3.0 4.0) )", writer.write(l));	
+        Assert.assertEquals("POINT(1.0 2.0)", p.asText());
+        System.out.println(l.asText());
+        Assert.assertEquals("LINESTRING((1.0 2.0) (3.0 4.0) )", l.asText());
 
-	}
+    }
 }

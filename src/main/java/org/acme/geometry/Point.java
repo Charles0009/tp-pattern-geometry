@@ -1,7 +1,7 @@
 package org.acme.geometry;
 import java.sql.ResultSet;
 
-public class Point implements Geometry{
+public class Point extends AbstractGeometry{
 
     private Coordinate coordinate;
 
