@@ -20,6 +20,7 @@ public class EnvelopeBuilderTest {
         Assert.assertEquals(result.getXmax(), 2.0, EPSILON);
         Assert.assertEquals(result.getYmax(), 1.0, EPSILON);
 
+    
 	}
 
 
