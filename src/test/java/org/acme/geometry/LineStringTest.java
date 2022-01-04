@@ -52,6 +52,24 @@ public class LineStringTest {
 
 	}
 
+    @Test
+	public void testClone(){
+        List <Point> points = new ArrayList<>();
+        Coordinate coords = new Coordinate(3.0,4.0);
+        Coordinate coords2 = new Coordinate(1.0,2.0);
+        Point p = new Point(coords);
+        Point p2 = new Point(coords2);
+        points.add(p);
+        points.add(p2);
+        LineString l = new LineString(points);  
+        LineString copy = l.clone();
+        Point point1 = copy.getPointN(0);
+        Coordinate coord_fin = point1.getCoordinate();
+        Assert.assertEquals(coords.getX(), coord_fin.getX(),  EPSILON);
+
+	}
+
+
 
 }
 

@@ -32,8 +32,8 @@ public class Point implements Geometry{
     }
 
     public void translate (Double dx, Double dy){
-        if ( dx == null || dy == null){
-            this.coordinate = new Coordinate();
+        if (this.coordinate.isEmpty()) {
+            this.coordinate = new Coordinate(dx, dy);
         }
         else{
             Double new_coord_x = dx + this.coordinate.getX();
@@ -41,4 +41,9 @@ public class Point implements Geometry{
             this.coordinate = new Coordinate (new_coord_x, new_coord_y);
         }
     }
+
+    public Point clone(){
+        return new Point(this.coordinate);
+    }
+    
 }

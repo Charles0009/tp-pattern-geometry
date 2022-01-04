@@ -46,6 +46,11 @@ public class LineString implements Geometry {
         this.points = points_translated;
     }
 
+    
+    public LineString clone(){
+        return new LineString(this.points);
+    }
+
   
 
 
