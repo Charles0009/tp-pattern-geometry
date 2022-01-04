@@ -1,5 +1,4 @@
 package org.acme.geometry;
-
 import java.sql.ResultSet;
 
 public class Point implements Geometry{
@@ -46,12 +45,15 @@ public class Point implements Geometry{
         return new Point(this.coordinate);
     }
 
-    @Override
     public Envelope getEnvelope() {
         if(! isEmpty()){
             return new Envelope(this.coordinate,this.coordinate);
         }        
         return new Envelope();
+    }
+
+    public void accept(GeometryVisitor visitor) {
+        visitor.visit(this);
     }
     
 }
