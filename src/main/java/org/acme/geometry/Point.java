@@ -52,8 +52,10 @@ public class Point implements Geometry{
         return new Envelope();
     }
 
+
+    @Override
     public void accept(GeometryVisitor visitor) {
-        visitor.visit(this);
+        visitor.visit(this);        
     }
     
 }
